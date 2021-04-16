@@ -2,8 +2,8 @@ const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const connectDb = require("./config/connectDB");
-require("colors");
 const traineesRoute = require("./routes/traineesRoute");
+const usersRoute = require("./routes/usersRoute");
 
 dotenv.config();
 
@@ -17,7 +17,8 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // routes
-app.use("/dodooapi/v1/trainees", traineesRoute);
+app.use("/api/v1/trainees", traineesRoute);
+app.use("/api/v1/users", usersRoute);
 
 //home route
 app.get("/", (req, res) => {
