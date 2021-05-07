@@ -4,9 +4,12 @@ const Trainee = require("../models/traineeSchema");
 const createTrainee = async (req, res) => {
   const newTrainee = new Trainee({
     name: req.body.name,
-    destination: req.body.destination,
-    email: req.body.email,
-    dob: req.body.dob,
+    image: req.body.image,
+    category: req.body.cateory,
+    description: req.body.description,
+    price: req.body.price,
+    mobile: req.body.mobile,
+    email: req.body.emial,
   });
 
   await newTrainee.save();
